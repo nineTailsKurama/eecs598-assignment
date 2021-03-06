@@ -16,6 +16,7 @@ from torch.utils.data import random_split
 from torch.utils.tensorboard import SummaryWriter
 
 
+
 # For deterministic runs
 torch.manual_seed(0)
 
@@ -36,6 +37,7 @@ def main():
     args = parser.parse_args()
     args.world_size = args.num_proc * args.nodes
     print(args)
+    print(os.getpid())
 
     # Task 2: Assign IP address and port for master process, i.e. process with rank=0
     os.environ['MASTER_ADDR'] = '10.10.1.1'
